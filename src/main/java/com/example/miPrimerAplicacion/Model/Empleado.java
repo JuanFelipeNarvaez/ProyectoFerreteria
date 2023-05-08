@@ -1,4 +1,4 @@
-package Modelo;
+package com.example.miPrimerAplicacion.Model;
 
 import javax.persistence.*;
 
@@ -9,16 +9,14 @@ public class Empleado {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private  String nombre;
-    private  String apellido;
     private int edad;
     private int telefono;
     private String usuario;
     private String password;
 
-    public Empleado(int id, String nombre, String apellido, int edad, int telefono, String usuario, String password) {
+    public Empleado(int id, String nombre, int edad, int telefono, String usuario, String password) {
         this.id = id;
         this.nombre = nombre;
-        this.apellido = apellido;
         this.edad = edad;
         this.telefono = telefono;
         this.usuario = usuario;
@@ -40,14 +38,6 @@ public class Empleado {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
     }
 
     public int getEdad() {
