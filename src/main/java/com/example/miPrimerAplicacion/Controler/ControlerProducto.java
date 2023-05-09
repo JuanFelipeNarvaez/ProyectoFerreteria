@@ -1,7 +1,7 @@
 package com.example.miPrimerAplicacion.Controler;
 
-import com.example.miPrimerAplicacion.InterfacesService.IEmpleadoService;
-import com.example.miPrimerAplicacion.Model.Empleado;
+import com.example.miPrimerAplicacion.InterfacesService.IProductoService;
+import com.example.miPrimerAplicacion.Model.Producto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,53 +13,41 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 import java.util.Optional;
-
 @Controller
 @RequestMapping
-public class Controler {
+public class ControlerProducto {
     @Autowired
-    private IEmpleadoService service;
+    private IProductoService service;
 
 
-    @GetMapping("/listar")
+    @GetMapping("/listarProducto")
     public String listar(Model model){
-        List<Empleado>empleados= service.listar();
-        model.addAttribute("empleados", empleados);
+        List<Producto>productos= service.listar();
+        model.addAttribute("productos", productos);
         return "FormWorker";
     }
-    @GetMapping("/new")
+    @GetMapping("/newProducto")
     public String agregar(Model model){
-        model.addAttribute("empleado", new Empleado());
+        model.addAttribute("producto", new Producto());
         return "FormWorker";
     }
-    @GetMapping("/menu")
-    public String agregar1(Model model){
-        model.addAttribute("empleado", new Empleado());
-        return "Menu";
-    }
-    @GetMapping("/productos")
-    public String agregar2(Model model){
 
-        return "Productos";
-    }
-
-    @PostMapping("/save")
-    public String save(@Validated Empleado p){
+    @PostMapping("/saveProducto")
+    public String save(@Validated Producto p){
         service.save(p);
-        return "redirect:/listar";
+        return "redirect:/listarProducto";
     }
 
-    @GetMapping("/editar/{id}")
+    @GetMapping("/editarProducto/{id}")
     public String editar(@PathVariable int id, Model model){
-        Optional<Empleado> empleado = service.listarId(id);
-        model.addAttribute("empleado", empleado);
+        Optional<Producto> producto = service.listarId(id);
+        model.addAttribute("producto", producto);
         return "FormWorker";
     }
 
     @GetMapping("/eliminar/{id}")
     public String delete(@PathVariable int id){
         service.delete(id);
-        return "redirect:/listar";
+        return "redirect:/listarProducto";
     }
-
 }
