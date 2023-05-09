@@ -12,4 +12,5 @@ public interface IEmpleadoService {
     public Optional<Empleado>listarId(int id);
     public int save (Empleado p);
     public void delete(int id);
+
 }

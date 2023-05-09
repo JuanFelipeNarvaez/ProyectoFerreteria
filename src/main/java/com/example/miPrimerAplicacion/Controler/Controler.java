@@ -32,6 +32,16 @@ public class Controler {
         model.addAttribute("empleado", new Empleado());
         return "FormWorker";
     }
+    @GetMapping("/menu")
+    public String agregar1(Model model){
+        model.addAttribute("empleado", new Empleado());
+        return "Menu";
+    }
+    @GetMapping("/productos")
+    public String agregar2(Model model){
+
+        return "Productos";
+    }
 
     @PostMapping("/save")
     public String save(@Validated Empleado p){
