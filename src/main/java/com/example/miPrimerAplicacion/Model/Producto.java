@@ -1,14 +1,15 @@
 package com.example.miPrimerAplicacion.Model;
 
+
 import javax.persistence.*;
 
 @Entity
-@Table(name = "producto")
+@Table(name = "productos")
 public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private  String nombre;
+    private String nombre;
     private int cantidad;
     private int precio;
     private int total;
@@ -20,7 +21,8 @@ public class Producto {
         this.precio = precio;
         this.total = total;
     }
-    public Producto(){}
+
+    public Producto() {}
 
     public int getId() {
         return id;

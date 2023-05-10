@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 import java.util.Optional;
@@ -25,22 +26,21 @@ public class ControlerEmpleado {
     public String listar(Model model){
         List<Empleado>empleados= service.listar();
         model.addAttribute("empleados", empleados);
-        return "FormWorker";
+        return "InfoEmpleados";
     }
     @GetMapping("/new")
     public String agregar(Model model){
         model.addAttribute("empleado", new Empleado());
-        return "FormWorker";
+        return "Empleado";
     }
-    @GetMapping("/menu")
+    /*@GetMapping("/menu")
     public String agregar1(Model model){
         model.addAttribute("empleado", new Empleado());
         return "Menu";
-    }
-    @GetMapping("/productos")
-    public String agregar2(Model model){
-
-        return "Productos";
+    }*/
+    @GetMapping("/login")
+    public String agregar2(){
+        return "Iniciar";
     }
 
     @PostMapping("/save")
@@ -53,7 +53,7 @@ public class ControlerEmpleado {
     public String editar(@PathVariable int id, Model model){
         Optional<Empleado> empleado = service.listarId(id);
         model.addAttribute("empleado", empleado);
-        return "FormWorker";
+        return "Empleado";
     }
 
     @GetMapping("/eliminar/{id}")
