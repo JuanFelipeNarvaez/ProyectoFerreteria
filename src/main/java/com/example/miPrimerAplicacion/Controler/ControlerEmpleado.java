@@ -33,11 +33,12 @@ public class ControlerEmpleado {
         model.addAttribute("empleado", new Empleado());
         return "Empleado";
     }
-    /*@GetMapping("/menu")
+    @GetMapping("/menu")
     public String agregar1(Model model){
         model.addAttribute("empleado", new Empleado());
         return "Menu";
-    }*/
+    }
+
     @GetMapping("/login")
     public String agregar2(){
         return "Iniciar";
@@ -61,5 +62,6 @@ public class ControlerEmpleado {
         service.delete(id);
         return "redirect:/listar";
     }
+
 
 }

@@ -25,6 +25,7 @@ public class ProductoService implements IProductoService{
     @Override
     public int saveProducto(Producto p){
         int res = 0;
+        p.setTotal(p.getPrecio() * p.getCantidad());
         Producto producto = data1.save(p);
         if(!producto.equals(null)){
             res = 1;

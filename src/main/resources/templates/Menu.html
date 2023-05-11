@@ -4,27 +4,17 @@
     <meta charset="UTF-8">
     <title>Menú</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <style>
-        body{
-            background-image: url(fondo_menu.png);
-            background-size: 100%;
-        }
-        a{
-            color: azure;
-        }
-
-    </style>
 </head>
-<body>
+<body style="background-image:url('https://www.google.com/url?sa=i&url=https%3A%2F%2Ffondosmil.com%2Fconstruccion&psig=AOvVaw1OGPnbOCACfnaNTT0R7p4P&ust=1683926597099000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCIC92MeZ7v4CFQAAAAAdAAAAABAJ')">
 <ul class="nav">
     <li class="nav-item">
         <a class="nav-link active" aria-current="page" href="#">Active</a>
     </li>
     <li class="nav-item px-1">
-        <button th:href="@{/new}" class="btn btn-primary">iniciar</button>
+        <a th:href="@{/listarProductos}" class="btn btn-outline-primary">iniciar</a>
     </li>
     <li class="nav-item px-1">
-        <button th:href="@{/formEmpleado}" class="btn btn-outline-success">Empleados</button>
+        <a th:href="@{/listar}" class="btn btn-outline-success">Empleados</a>
     </li>
     <li class="nav-item">
         <a class="nav-link disabled">Disabled</a>
