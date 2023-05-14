@@ -3,6 +3,7 @@ package com.example.miPrimerAplicacion.Controler;
 import com.example.miPrimerAplicacion.InterfacesService.IEmpleadoService;
 import com.example.miPrimerAplicacion.Model.Empleado;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;

@@ -1,8 +1,10 @@
 package com.example.miPrimerAplicacion.Service;
 
 import com.example.miPrimerAplicacion.Interfaces.IProducto;
+import com.example.miPrimerAplicacion.Interfaces.IVenta;
 import com.example.miPrimerAplicacion.InterfacesService.IProductoService;
 import com.example.miPrimerAplicacion.Model.Producto;
+import com.example.miPrimerAplicacion.Model.Venta;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,9 @@ public class ProductoService implements IProductoService{
     @Autowired
     private IProducto data1;
 
+    @Autowired
+    private IVenta data2;
+
     @Override
     public List<Producto> listarProductos(){
         return (List<Producto>)  data1.findAll();
@@ -22,7 +27,7 @@ public class ProductoService implements IProductoService{
     public Optional<Producto> listarProductosId(int id){
         return data1.findById(id);
     }
-    @Override
+    /*@Override
     public int saveProducto(Producto p){
         int res = 0;
         p.setTotal(p.getPrecio() * p.getCantidad());
@@ -32,8 +37,22 @@ public class ProductoService implements IProductoService{
         }
         return res;
     }
+    */
     @Override
     public void deleteProducto(int id){
         data1.deleteById(id);
     }
+    @Override
+    public int saveProducto(Producto p){
+        int res = 0;
+        if(p.getCantidad() > 0 && p.getPrecio() > 0){
+            p.setTotal(p.getPrecio() * p.getCantidad());
+            Producto producto = data1.save(p);
+            if(!producto.equals(null)){
+                res = 1;
+            }
+        }
+        return res;
+    }
+
 }

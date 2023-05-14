@@ -6,15 +6,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.List;
 import java.util.Optional;
-
 @SpringBootApplication(scanBasePackages = {"com.example.miPrimerAplicacion"})
-public interface IProductoService {
-    public List<Producto> listarProductos();
-
-    public Optional<Producto> listarProductosId(int id);
-
-    public int saveProducto(Producto p);
-
-    public void deleteProducto(int id);
+public interface IVentaService {
+    public List<Venta>listarVentas();
+    public Optional<Venta>listarIdVenta(int id);
+    public int saveVenta(Venta v);
+    public void deleteVenta(int id);
 
 }
