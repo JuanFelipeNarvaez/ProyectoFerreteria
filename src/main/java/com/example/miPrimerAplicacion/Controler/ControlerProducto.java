@@ -1,6 +1,7 @@
 package com.example.miPrimerAplicacion.Controler;
 
 import com.example.miPrimerAplicacion.InterfacesService.IProductoService;
+import com.example.miPrimerAplicacion.InterfacesService.IVentaService;
 import com.example.miPrimerAplicacion.Model.Producto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,6 +20,8 @@ import java.util.Optional;
 public class ControlerProducto {
     @Autowired
     private IProductoService service1;
+    @Autowired
+    private IVentaService servicioo;
 
 
     @GetMapping("/listarProductos")
@@ -47,6 +50,12 @@ public class ControlerProducto {
     public String deleteProducto(@PathVariable int id){
         service1.deleteProducto(id);
         return "redirect:/listarProductos";
+    }
+    @GetMapping("/add/{id}")
+    public String add(@PathVariable int id, Model model){
+        Optional<Producto> producto = service1.listarProductosId(id);
+        model.addAttribute("venta", producto);
+        return "Venta";
     }
 
 }
