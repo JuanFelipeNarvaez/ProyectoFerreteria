@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-  <style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <style>
         body{
         background: yellow;
         }
@@ -16,32 +16,38 @@
 </head>
 <body>
 <div class="container w-75 mt-5 rounded shadow">
-  <div1 class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
-    <h2>Listado Ventas</h2>
-    <div class="my-2">
-      <a th:href="@{/newVenta}" class="btn btn-primary">Nuevo</a>
-    </div>
-    <table class="table table-striped table-dark">
-      <thead>
-      <tr>
-        <th>ID</th>
-        <th>Nombre</th>
-        <th>Cantidad</th>
-        <th>Precio</th>
-        <th>Total</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr th:each="venta:${Ventas}">
-        <td th:text="${venta.id}"></td>
-        <td th:text="${venta.nombre}"></td>
-        <td th:text="${venta.cantidad}"></td>
-        <td th:text="${venta.precio}"></td>
-        <td th:text="${venta.total}"></td>
-      </tr>
-      </tbody>
-    </table>
-  </div1>
+    <div1 class="col-sm-12 col-md-8 col-lg-8 col-xl-8">
+        <h2>Listado Productos</h2>
+        <div class="my-2">
+            <a th:href="@{/menu}" class="btn btn-danger">Regresar</a>
+            <a th:href="@{/newVenta}" class="btn btn-primary">Nuevo</a>
+        </div>
+        <table class="table table-striped table-dark">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Cantidad</th>
+                <th>Precio</th>
+                <th>Total</th>
+                <th>Opciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="venta:${ventas}">
+                <td th:text="${venta.id}"></td>
+                <td th:text="${venta.nombre}"></td>
+                <td th:text="${venta.cantidad}"></td>
+                <td th:text="${venta.precio}"></td>
+                <td th:text="${venta.total}"></td>
+                <td>
+                    <!--<a th:href="@{/editarProducto/}+${producto.id}" class="btn btn-warning">Editar</a>
+                    <a th:href="@{/eliminarProducto/}+${producto.id}"  class="btn btn-danger">Eliminar</a>-->
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div1>
 
 </div>
 

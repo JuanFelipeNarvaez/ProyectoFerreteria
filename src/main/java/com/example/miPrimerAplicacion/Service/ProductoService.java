@@ -1,10 +1,8 @@
 package com.example.miPrimerAplicacion.Service;
 
 import com.example.miPrimerAplicacion.Interfaces.IProducto;
-import com.example.miPrimerAplicacion.Interfaces.IVenta;
 import com.example.miPrimerAplicacion.InterfacesService.IProductoService;
 import com.example.miPrimerAplicacion.Model.Producto;
-import com.example.miPrimerAplicacion.Model.Venta;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,8 +14,6 @@ public class ProductoService implements IProductoService{
     @Autowired
     private IProducto data1;
 
-    @Autowired
-    private IVenta data2;
 
     @Override
     public List<Producto> listarProductos(){
