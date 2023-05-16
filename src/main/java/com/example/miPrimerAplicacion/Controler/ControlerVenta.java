@@ -1,16 +1,17 @@
 package com.example.miPrimerAplicacion.Controler;
 
+import com.example.miPrimerAplicacion.Interfaces.IVenta;
 import com.example.miPrimerAplicacion.InterfacesService.IVentaService;
 import com.example.miPrimerAplicacion.Model.Venta;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 

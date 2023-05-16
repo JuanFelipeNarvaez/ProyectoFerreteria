@@ -35,14 +35,13 @@ public class ControlerEmpleado {
         return "Empleado";
     }
     @GetMapping("/menu")
-    public String agregar1(Model model){
-        model.addAttribute("empleado", new Empleado());
+    public String menu1(){
         return "Menu";
     }
 
-    @GetMapping("/login")
-    public String agregar2(){
-        return "Iniciar";
+    @GetMapping()
+    public String menu2(){
+        return "menu";
     }
 
     @PostMapping("/save")

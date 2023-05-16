@@ -2,11 +2,11 @@
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Listado Empleados</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <style>
         body{
-        background: yellow;
+        background-image: url(/images/herramientas.jpg);
         }
         div{
         background: white;
@@ -20,7 +20,6 @@
         <h2>Listado Ventas</h2>
         <div class="my-2">
             <a th:href="@{/menu}" class="btn btn-danger">Regresar</a>
-            <a th:href="@{/newVenta}" class="btn btn-primary">Nuevo</a>
         </div>
         <table class="table table-striped table-dark">
             <thead>
@@ -30,7 +29,6 @@
                 <th>Cantidad</th>
                 <th>Precio</th>
                 <th>Total</th>
-                <th>Opciones</th>
             </tr>
             </thead>
             <tbody>
@@ -40,13 +38,10 @@
                 <td th:text="${venta.cantidad}"></td>
                 <td th:text="${venta.precio}"></td>
                 <td th:text="${venta.total}"></td>
-                <td>
-                    <!--<a th:href="@{/editarProducto/}+${producto.id}" class="btn btn-warning">Editar</a>
-                    <a th:href="@{/eliminarProducto/}+${producto.id}"  class="btn btn-danger">Eliminar</a>-->
-                </td>
             </tr>
             </tbody>
         </table>
+        <h2>___________________________________________________________________________</h2>
     </div1>
 
 </div>

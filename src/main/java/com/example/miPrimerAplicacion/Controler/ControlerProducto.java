@@ -20,8 +20,6 @@ import java.util.Optional;
 public class ControlerProducto {
     @Autowired
     private IProductoService service1;
-    @Autowired
-    private IVentaService servicioo;
 
 
     @GetMapping("/listarProductos")

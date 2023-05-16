@@ -7,6 +7,7 @@ import com.example.miPrimerAplicacion.Model.Venta;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -14,8 +15,6 @@ import java.util.Optional;
 public class VentaService implements IVentaService{
     @Autowired
     private IVenta data2;
-    @Autowired
-    private IVenta data1;
     @Override
     public List<Venta> listarVentas(){
         return (List<Venta>)  data2.findAll();

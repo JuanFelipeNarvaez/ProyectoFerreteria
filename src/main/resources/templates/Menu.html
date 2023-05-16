@@ -8,22 +8,22 @@
         body{
         background-image: url(/images/cons.jpg);
         }
+        ul{
+        background: black;
+        }
     </style>
 </head>
 <body>
 
-<ul class="nav">
+<ul class="nav py-2">
     <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">Active</a>
+        <a th:href="@{/listarVentas}" class="btn btn-outline-danger px-5">Ventas</a>
     </li>
     <li class="nav-item">
-        <a th:href="@{/listarProductos}" class="btn btn-info">Productos</a>
+        <a th:href="@{/listarProductos}" class="btn btn-outline-info px-5">Productos</a>
     </li>
     <li class="nav-item">
-        <a th:href="@{/listar}" class="btn btn-success">Empleados</a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link disabled">Disabled</a>
+        <a th:href="@{/listar}" class="btn btn-outline-success px-5">Empleados</a>
     </li>
 </ul>
 </body>
